@@ -1,0 +1,61 @@
+{%- extends "basic/layout.html" %}
+{%- set show_sphinx = false %}
+{%- block htmltitle %}
+<title>337开发者文档中心</title>
+{%- endblock %}
+{%- block extrahead %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://337.eleximg.com/337/v3static/lib/semantic/css/semantic.css?v=04161152">
+<link rel="stylesheet" href="http://337.eleximg.com/337/v3static/css/apps/style.css?v=04161852">
+{% endblock %}
+{%- block header %}
+    <div class="ui fixed inverted main menu" style="z-index: 9999">
+	    	<div class="item">
+	        	<strong> <a href="{{ pathto(master_doc) }}">337开发者文档中心</a></strong>
+	    	</div>
+    	</div>
+{% endblock %}
+{%- block relbar1 %}
+{% endblock %}
+{%- block content %}
+<div class="container">
+  <main class="ui grid">
+    <aside class="four wide column">
+  {%- block sidebar1 %}
+  {%- include "sidebars.html" %}
+  {% endblock %}
+    </aside>
+    <section class="twelve wide column">
+    <div class="document">
+  {%- block document %}
+      <div class="documentwrapper">
+      {%- if render_sidebar %}
+        <div class="bodywrapper">
+      {%- endif %}
+          <div class="body">
+            {% block body %} {% endblock %}
+          </div>
+      {%- if render_sidebar %}
+        </div>
+      {%- endif %}
+      </div>
+  {%- endblock %}
+
+  {%- block sidebar2 %}{% endblock %}
+</section>
+  </main>
+</div>
+{%- endblock %}
+{%- block relbar2 %}
+{% endblock %}
+{%- block footer %}
+    <footer style="height: 100px;">
+		<div class="ui divider"></div>
+		<div class="ui divided horizontal footer link list"   style="text-align: center;display: block;">
+		<div class="item">
+			<strong> &copy; 2012 Elex  </strong>
+		</div>
+		</div>
+		</footer>
+    <script src="http://337.eleximg.com/337/v3static/lib/semantic/javascript/semantic.min.js?v=04161150"></script>
+{%- endblock %}
